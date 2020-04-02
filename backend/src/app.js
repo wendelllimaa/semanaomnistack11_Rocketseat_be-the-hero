@@ -7,6 +7,7 @@
 
 const express = require ('express');
 const cors = require ('cors');
+const { errors } = require('celebrate');
 const routes = require('./routes');
 
 const app = express ();
@@ -49,4 +50,6 @@ TIPOS DE PARÂMETROS:
  *  response -> retornar uma resposta do usuário;
  */
 
-app.listen(3333);
+app.use(errors());
+
+module.exports = app;
